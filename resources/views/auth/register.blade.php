@@ -30,9 +30,10 @@
                         value="{{ old("name") }}"
                         required
                     />
-                    @error('name')
+                    @error("name")
                         <div class="form-text text-danger ms-2">
-                            Algo deu errado, verifique suas credencias e tente novamente
+                            Algo deu errado, verifique suas credencias e tente
+                            novamente
                         </div>
                     @enderror
                 </div>
@@ -47,9 +48,10 @@
                         value="{{ old("email") }}"
                         required
                     />
-                    @error('email')
+                    @error("email")
                         <div class="form-text text-danger ms-2">
-                            Algo deu errado, verifique suas credencias e tente novamente
+                            Algo deu errado, verifique suas credencias e tente
+                            novamente
                         </div>
                     @enderror
                 </div>
@@ -59,11 +61,11 @@
                         type="password"
                         name="password"
                         id="password"
-                        class="form-control @error('password') is-invalid @enderror"
+                        class="form-control @error("password") is-invalid @enderror"
                         placeholder="Senha"
                         required
                     />
-                    @error('password')
+                    @error("password")
                         <div class="form-text text-danger ms-2">
                             Sua senha deve ter, no mínimo, 8 caracteres
                         </div>
@@ -82,7 +84,7 @@
                 <div class="w-100 d-flex justify-content-center">
                     <span class="text-center">
                         Já tem uma conta?
-                        <a href="{{ route('auth.login') }}">Login</a>
+                        <a href="{{ route("auth.login") }}">Login</a>
                     </span>
                 </div>
             </form>
