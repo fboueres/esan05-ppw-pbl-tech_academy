@@ -17,16 +17,25 @@
         </header>
 
         <section class="form-section w-75">
-            <form action="#" method="POST">
+            <form action="{{ route("auth.login") }}" method="POST">
+                @csrf
+                @method("POST")
                 <div class="form-group mb-3">
                     <input
                         type="email"
                         name="email"
                         id="email"
-                        class="form-control"
+                        class="form-control @error("email") is-invalid @enderror"
                         placeholder="E-mail"
+                        value="{{ old("email") }}"
                         required
                     />
+                    @if ($errors->any())
+                        <div class="form-text text-danger ms-2">
+                            Algo deu errado, verifique suas credenciais e tente
+                            novamente.
+                        </div>
+                    @endif()
                 </div>
 
                 <div class="form-group mb-3">
@@ -45,12 +54,12 @@
                         <div class="form-check">
                             <input
                                 type="checkbox"
-                                name="remember-me"
-                                id="remember-me"
+                                name="remember"
+                                id="remember"
                                 class="form-check-input"
                                 aria-label="Remember me"
                             />
-                            <label for="remember-me" class="form-check-label">
+                            <label for="remember" class="form-check-label">
                                 Lembrar de mim
                             </label>
                         </div>
