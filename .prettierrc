@@ -1,5 +1,5 @@
 {
-  "plugins": ["prettier-plugin-blade"],
+  "plugins": ["prettier-plugin-blade", "@prettier/plugin-php"],
   "overrides": [
     {
       "files": [
@@ -7,6 +7,14 @@
       ],
       "options": {
         "parser": "blade"
+      }
+    },
+    {
+      "files": [
+        "*.php"
+      ],
+      "options": {
+        "parser": "php"
       }
     }
   ]
