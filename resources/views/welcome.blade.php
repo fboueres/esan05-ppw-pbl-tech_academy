@@ -11,7 +11,7 @@
     </head>
     <body class="pt-5">
         <nav class="navbar bg-body-tertiary fixed-top">
-            <div class="container-fluid">
+            <d class="container-fluid">
                 <span class="navbar-brand">Tech Academy</span>
                 <ul class="navbar-nav me-auto d-flex flex-row gap-3">
                     <li class="nav-item">
@@ -30,21 +30,37 @@
                         <a href="#faq" class="nav-link">FAQ</a>
                     </li>
                 </ul>
-                <ul class="navbar-nav ms-auto d-flex flex-row gap-3">
-                    <a
-                        href="{{ route("auth.register") }}"
-                        class="btn btn-outline-primary"
-                    >
-                        Cadastrar-se
-                    </a>
-                    <a
-                        href="{{ route("auth.login") }}"
-                        class="btn btn-primary"
-                    >
-                        Login
-                    </a>
-                </ul>
-            </div>
+                @auth
+                <div class="dropdown ms-auto">
+                    <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
+                        {{ Auth::user()->name }} <!-- Replace with dynamic username -->
+                    </button>
+                    <ul class="dropdown-menu dropdown-menu-end">
+                        <li><a class="dropdown-item" href="#profile">Perfil</a></li>
+                        <li><a class="dropdown-item" href="{{ route('auth.logout') }}">Sair</a></li>
+                    </ul>
+                </div>
+                @else
+                <div class="navbar-nav ms-auto d-flex flex-row gap-3">
+                    <li class="nav-item">
+                        <a
+                            href="{{ route("auth.register") }}"
+                            class="btn btn-outline-primary"
+                        >
+                            Cadastrar-se
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a
+                            href="{{ route("auth.login") }}"
+                            class="btn btn-primary"
+                        >
+                            Login
+                        </a>
+                    </li>
+                </div>
+                @endauth
+            </d iv>
         </nav>
         <main>
             <section id="sobre" class="container mb-3 py-5">
@@ -351,7 +367,7 @@
                 </div>
             </section>
             <section id="faq" class="container mb-3">
-                <h1 class="mb-3">FAQ</h1>
+                <h1 class=" text-center mb-3">FAQ</h1>
                 <div class="accordion">
                     <div class="accordion-item">
                         <h2 class="accordion-header">
