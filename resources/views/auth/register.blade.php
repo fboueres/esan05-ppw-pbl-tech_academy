@@ -17,12 +17,12 @@
         </header>
 
         <section class="form-section w-75">
-            <form action="{{ route("auth.register") }}" method="POST">
+            <form action="{{ route("register") }}" method="POST">
                 @csrf
                 @method("POST")
                 <div class="form-group mb-3">
                     <input
-                        type="name"
+                        type="text"
                         name="name"
                         id="name"
                         class="form-control @error("name") is-invalid @enderror"
@@ -84,7 +84,7 @@
                 <div class="w-100 d-flex justify-content-center">
                     <span class="text-center">
                         Já tem uma conta?
-                        <a href="{{ route("auth.login") }}">Login</a>
+                        <a href="{{ route("login") }}">Login</a>
                     </span>
                 </div>
             </form>

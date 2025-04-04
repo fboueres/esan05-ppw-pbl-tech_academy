@@ -36,15 +36,15 @@
                         {{ Auth::user()->name }} <!-- Replace with dynamic username -->
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end">
-                        <li><a class="dropdown-item" href="#profile">Perfil</a></li>
-                        <li><a class="dropdown-item" href="{{ route('auth.logout') }}">Sair</a></li>
+                        <li><a class="dropdown-item" href="{{ route('user.profile') }}">Perfil</a></li>
+                        <li><a class="dropdown-item" href="{{ route('logout') }}">Sair</a></li>
                     </ul>
                 </div>
                 @else
                 <div class="navbar-nav ms-auto d-flex flex-row gap-3">
                     <li class="nav-item">
                         <a
-                            href="{{ route("auth.register") }}"
+                            href="{{ route("register") }}"
                             class="btn btn-outline-primary"
                         >
                             Cadastrar-se
@@ -52,7 +52,7 @@
                     </li>
                     <li class="nav-item">
                         <a
-                            href="{{ route("auth.login") }}"
+                            href="{{ route("login") }}"
                             class="btn btn-primary"
                         >
                             Login

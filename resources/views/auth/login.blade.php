@@ -17,7 +17,7 @@
         </header>
 
         <section class="form-section w-75">
-            <form action="{{ route("auth.login") }}" method="POST">
+            <form action="{{ route("login") }}" method="POST">
                 @csrf
                 @method("POST")
                 <div class="form-group mb-3">
