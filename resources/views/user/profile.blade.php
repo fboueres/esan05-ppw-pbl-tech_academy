@@ -9,24 +9,25 @@
         <!-- Styles / Scripts -->
         @vite(["resources/css/app.css", "resources/js/app.js"])
     </head>
-    <body class="container vh-100 d-flex justify-content-center align-items-center">
-        <div class="card">
+    <body class="container min-vh-100 min-vw-100 d-flex justify-content-center align-items-center">
+        <div class="card w-50">
             <div class="card-body">
                 <h3 class="card-title text-center mb-3">Seu perfil</h3>
-                <div class="form-group mb-3">
+                <form action="{{ route('user.profile') }}" method="POST">
+                    @csrf
+                    @method('PUT')
                     <div class="form-group mb-3">
-                        <input
-                            type="text"
-                            name="name"
-                            id="name"
-                            class="form-control @error("name") is-invalid @enderror"
-                            placeholder="Seu nome"
-                            value="{{ old("name", Auth::user()->name) }}"
-                            required
-                        />
+                        <div class="form-group mb-3">
+                            <input
+                                type="text"
+                                name="name"
+                                id="name"
+                                class="form-control @error("name") is-invalid @enderror"
+                                placeholder="Seu nome"
+                                value="{{ old("name", Auth::user()->name) }}"
+                            />
+                        </div>
                     </div>
-                </div>
-                <div class="form-group mb-3">
                     <div class="form-group mb-3">
                         <input
                             type="email"
@@ -35,14 +36,13 @@
                             class="form-control @error("email") is-invalid @enderror"
                             placeholder="Seu nome"
                             value="{{ old("email", Auth::user()->email) }}"
-                            required
                         />
-                        @error("email")
+                        @if($errors->any())
                             <div class="form-text text-danger ms-2">
                                 Algo deu errado, verifique suas credencias e tente
                                 novamente
                             </div>
-                        @enderror
+                        @endif
                     </div>
                     <div class="form-group mb-3">
                         <input
@@ -51,7 +51,6 @@
                             id="old_password"
                             class="form-control"
                             placeholder="Sua senha atinga"
-                            required
                         />
                     </div>
                     <div class="form-group mb-3">
@@ -60,8 +59,7 @@
                             name="new_password"
                             id="new_password"
                             class="form-control @error("new_password") is-invalid @enderror"
-                            placeholder="Senha"
-                            required
+                            placeholder="Sua senha nova"
                         />
                         @error("new_password")
                             <div class="form-text text-danger ms-2">
@@ -75,16 +73,18 @@
                             name="new_password_confirmation"
                             id="new_password_confirmation"
                             class="form-control @error("new_password_confirmation") is-invalid @enderror"
-                            placeholder="Senha"
-                            required
+                            placeholder="Repita sua nova senha"
                         />
-                        @error("new_password_confirmation")
+                        @error("new_password")
                             <div class="form-text text-danger ms-2">
                                 Preencha os dois campos com a sua nova senha
                             </div>
                         @enderror
                     </div>
-                </div>
+                    <div class="w-full d-flex justify-content-end">
+                        <button type="submit" class="btn btn-primary">Salvar</button>
+                    </div>
+                </form>
             </div>
         </div>
     </body>

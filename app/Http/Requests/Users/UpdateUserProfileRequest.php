@@ -30,7 +30,8 @@ class UpdateUserProfileRequest extends FormRequest
                 'max:255',
                 Rule::unique('users')->ignore(auth()->user()),
             ],
-
+            'old_password' => 'required|string|max:255',
+            'new_password' => 'nullable|string|max:255|confirmed',
         ];
     }
 }

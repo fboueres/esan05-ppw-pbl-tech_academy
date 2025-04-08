@@ -13,6 +13,8 @@ return Application::configure(basePath: dirname(__DIR__))
         then: function () {
             Route::middleware(['guest', 'web'])
                 ->group(base_path('routes/auth.php'));
+            Route::middleware(['auth', 'web'])
+                ->group(base_path('routes/app.php'));
         },
     )
     ->withMiddleware(function (Middleware $middleware) {
