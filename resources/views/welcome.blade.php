@@ -33,7 +33,7 @@
                 @auth
                 <div class="dropdown ms-auto">
                     <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                        {{ Auth::user()->name }} <!-- Replace with dynamic username -->
+                        {{ Auth::user()->name }}
                     </button>
                     <ul class="dropdown-menu dropdown-menu-end">
                         <li><a class="dropdown-item" href="{{ route('user.profile') }}">Perfil</a></li>

@@ -9,13 +9,15 @@
         <!-- Styles / Scripts -->
         @vite(["resources/css/app.css", "resources/js/app.js"])
     </head>
-    <body class="container min-vh-100 min-vw-100 d-flex justify-content-center align-items-center">
+    <body
+        class="container min-vh-100 min-vw-100 d-flex justify-content-center align-items-center"
+    >
         <div class="card w-50">
             <div class="card-body">
                 <h3 class="card-title text-center mb-3">Seu perfil</h3>
-                <form action="{{ route('user.profile') }}" method="POST">
+                <form action="{{ route("user.profile") }}" method="POST">
                     @csrf
-                    @method('PUT')
+                    @method("PUT")
                     <div class="form-group mb-3">
                         <div class="form-group mb-3">
                             <input
@@ -37,10 +39,10 @@
                             placeholder="Seu nome"
                             value="{{ old("email", Auth::user()->email) }}"
                         />
-                        @if($errors->any())
+                        @if ($errors->any())
                             <div class="form-text text-danger ms-2">
-                                Algo deu errado, verifique suas credencias e tente
-                                novamente
+                                Algo deu errado, verifique suas credencias e
+                                tente novamente
                             </div>
                         @endif
                     </div>
@@ -81,8 +83,11 @@
                             </div>
                         @enderror
                     </div>
-                    <div class="w-full d-flex justify-content-end">
-                        <button type="submit" class="btn btn-primary">Salvar</button>
+                    <div class="w-full d-flex justify-content-end gap-1">
+                        <a href="#" class="btn btn-secondary">Voltar</a>
+                        <button type="submit" class="btn btn-primary">
+                            Salvar
+                        </button>
                     </div>
                 </form>
             </div>
