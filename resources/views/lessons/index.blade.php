@@ -24,6 +24,7 @@
                                         <button type="submit" class="btn btn-danger">Deletar Curso</button>
                                     </form>
                                     <a href="{{ route('lessons.edit', $lesson) }}" class="btn btn-primary">Editar Curso</a>
+                                    <a href="{{ route('lessons.modules.index', $lesson) }}" class="btn btn-secondary">Módulos</a>
                                 </td>
                             </tr>
                         @empty

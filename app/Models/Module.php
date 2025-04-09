@@ -4,25 +4,25 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Lesson extends Model
+class Module extends Model
 {
     use HasUuids;
-    
+
     /**
      * The attributes that are mass assignable.
      *
      * @var list<string>
      */
     protected $fillable = [
+        'lesson_id',
         'name',
         'description',
-        'duration',
     ];
 
-    public function modules(): HasMany
+    public function lesson(): BelongsTo
     {
-        return $this->hasMany(Module::class);
+        return $this->belongsTo(Lesson::class);
     }
 }
