@@ -50,7 +50,7 @@ class ModuleController extends Controller
      */
     public function edit(Lesson $lesson, Module $module)
     {
-        return view('modules.edit', compact('module'));
+        return view('modules.edit', compact('lesson', 'module'));
     }
 
     /**

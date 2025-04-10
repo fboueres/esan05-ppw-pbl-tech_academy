@@ -9,28 +9,25 @@
                 <thead>
                     <tr>
                         <th scope="col">Nome</th>
-                        <th scope="col">Duração</th>
                         <th scope="col">Ações</th>
                     </tr>
                 </thead>
                 <tbody>
-                    @forelse($lessons as $lesson)
+                    @forelse($modules as $module)
                         <tr>
-                            <th scope="row">{{ $lesson->name }}</th>
-                            <td>{{ $lesson->duration }}</td>
+                            <th scope="row">{{ $module->name }}</th>
                             <td>
-                                <form action="{{ route('lessons.destroy', $lesson) }}" class="d-inline" method="POST">
+                                <form action="{{ route('lessons.modules.destroy', [$lesson, $module]) }}" class="d-inline" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-danger">Deletar Curso</button>
+                                    <button type="submit" class="btn btn-danger">Deletar Módulo</button>
                                 </form>
-                                <a href="{{ route('lessons.edit', $lesson) }}" class="btn btn-primary">Editar Curso</a>
-                                <a href="{{ route('lessons.modules.index', $lesson) }}" class="btn btn-secondary">Módulos</a>
+                                <a href="{{ route('lessons.modules.edit', [$lesson, $module]) }}" class="btn btn-primary">Editar Módulo</a>
                             </td>
                         </tr>
                     @empty
                         <tr>
-                            <th>Sem cursos cadastrados.</th>
+                            <th>Sem Módulos cadastrados.</th>
                             <td></td>
                             <td></td>
                         </tr>
