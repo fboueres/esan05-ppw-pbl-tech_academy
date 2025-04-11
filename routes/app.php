@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CourseResourceController;
 use App\Http\Controllers\LessonController;
 use App\Http\Controllers\ModuleController;
 use App\Http\Controllers\Users\UpdateUserProfile;
@@ -10,3 +11,5 @@ Route::put('/profile', UpdateUserProfile::class)->name('user.profile')->middlewa
 
 Route::resource('lessons', LessonController::class);
 Route::resource('lessons.modules', ModuleController::class);
+
+Route::resource('courses', CourseResourceController::class);
