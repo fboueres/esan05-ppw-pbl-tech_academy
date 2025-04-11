@@ -10,7 +10,7 @@
     </head>
     <body class="d-flex flex-column min-vh-100">
         @include('partials.nav')
-        <main class="flex-grow-1 d-flex flex-column container-mt-3">
+        <main class="flex-grow-1 d-flex flex-column container mt-3">
             @section('content')
             @show
         </main>
