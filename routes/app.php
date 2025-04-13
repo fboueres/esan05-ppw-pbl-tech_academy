@@ -10,6 +10,5 @@ Route::get('/profile', fn() => view('user.profile'))->name('user.profile')->midd
 Route::put('/profile', UpdateUserProfile::class)->name('user.profile')->middleware('auth');
 
 Route::resource('lessons', LessonController::class);
-Route::resource('lessons.modules', ModuleController::class);
 
 Route::resource('courses', CourseResourceController::class);
