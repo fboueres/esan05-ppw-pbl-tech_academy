@@ -33,7 +33,7 @@ class CourseResourceController extends Controller
     {
         $course = Course::create($request->validated());
 
-        return redirect()->route('courses.show', $course);
+        return redirect()->route('courses.index');
     }
 
     /**
@@ -59,7 +59,7 @@ class CourseResourceController extends Controller
     {
         $course->update($request->validated());
 
-        return redirect()->route('courses.edit', $course);
+        return redirect()->route('courses.edit', $course)->with('success', 'Curso atualizado com sucesso!');
     }
 
     /**

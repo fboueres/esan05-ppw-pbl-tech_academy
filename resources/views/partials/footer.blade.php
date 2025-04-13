@@ -1,9 +1,9 @@
-<footer class="border-top py-3">
-    <div class="container d-flex justify-content-between">
+<footer class="border-top py-3 bg-light mt-auto">
+    <div class="container d-flex align-items-center justify-content-between">
         <span class="text-body-secondary align-content-center">
-            ©2025 Tech Academy
+            &copy; {{ now()->year }} Tech Academy
         </span>
-        <ul class="nav">
+        <ul class="nav mt-2">
             <li class="nav-item">
                 <a href="#" class="nav-link">Linkedin</a>
             </li>

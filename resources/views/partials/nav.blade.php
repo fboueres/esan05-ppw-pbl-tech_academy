@@ -3,7 +3,7 @@
         <a class="navbar-brand" href="#">Tech Academy</a>
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-                <a class="nav-link" href="#Cursos">Cursos</a>
+                <a class="nav-link" href="{{ route('courses.index') }}">Cursos</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#Feedback">Feedback</a>
@@ -21,7 +21,7 @@
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
             >
-                User Name
+                {{ Auth::user()->name }}
             </a>
             <ul class="dropdown-menu dropdown-menu-end">
                 <li>

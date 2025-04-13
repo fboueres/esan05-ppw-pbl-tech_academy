@@ -1,4 +1,4 @@
-@extends("app-base")
+@extends("layouts.app")
 @section("title", "Criar Novo Curso")
 @section("content")
     <section class="d-flex justify-content-center">
@@ -8,28 +8,41 @@
                 <form action="{{ route("courses.store") }}" method="POST">
                     @csrf
                     @method("POST")
-                    <div class="form-group mb-3">
-                        <div class="form-group mb-3">
-                            <input
-                                type="text"
-                                name="name"
-                                id="name"
-                                class="form-control @error("name") is-invalid @enderror"
-                                placeholder="Nome do Curso"
-                                value="{{ old("name") }}"
-                            />
-                        </div>
-                        <div class="d-flex gap-3">
-                            <a
-                                href="{{ route("courses.index") }}"
-                                class="btn btn-secondary w-100"
-                            >
-                                Voltar aos Cursos
-                            </a>
-                            <button type="submit" class="btn btn-primary w-100">
-                                Cadastrar
-                            </button>
-                        </div>
+                    <div class="form-floating mb-3">
+                        <input
+                            type="text"
+                            name="name"
+                            id="name"
+                            class="form-control @error("name") is-invalid @enderror"
+                            placeholder="Nome do Curso"
+                            value="{{ old("name") }}"
+                            required
+                        />
+                        <label for="name">Nome do Curso</label>
+                    </div>
+                    <div class="form-floating mb-3">
+                        <textarea
+                            name="description"
+                            id="description"
+                            class="form-control @error("description") is-invalid @enderror"
+                            placeholder="Descrição do Curso"
+                            required
+                        >
+{{ old("description") }}</textarea
+                        >
+                        <label for="description">Descrição do Curso</label>
+                    </div>
+
+                    <div class="d-flex gap-3">
+                        <a
+                            href="{{ url()->previous() }}"
+                            class="btn btn-secondary w-100"
+                        >
+                            Voltar
+                        </a>
+                        <button type="submit" class="btn btn-primary w-100">
+                            Cadastrar
+                        </button>
                     </div>
                 </form>
             </div>
