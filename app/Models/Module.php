@@ -4,9 +4,9 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Concerns\HasUuids;
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class Course extends Model
+class Module extends Model
 {
     use HasUuids;
     
@@ -17,11 +17,11 @@ class Course extends Model
      */
     protected $fillable = [
         'name',
-        'description',
+        'order',
     ];
 
-    public function modules(): HasMany
+    public function course(): BelongsTo
     {
-        return $this->hasMany(Module::class);
+        return $this->belongsTo(Course::class);
     }
 }

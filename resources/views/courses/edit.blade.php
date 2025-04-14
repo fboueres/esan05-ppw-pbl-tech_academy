@@ -5,6 +5,12 @@
         <div class="card w-50">
             <div class="card-body">
                 <h3 class="card-title text-center mb-3">Editar Curso</h3>
+                @if (session('success'))
+                    <div class="alert alert-success alert-dismissible fade show" role="alert">
+                        {{ session('success') }}
+                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fechar"></button>
+                    </div>
+                @endif
                 <form
                     action="{{ route("courses.update", $course) }}"
                     method="POST"
@@ -50,30 +56,5 @@
                 </form>
             </div>
         </div>
-        @if (session("success"))
-            <div
-                class="toast-container position-fixed top-0 end-0 p-3"
-                style="z-index: 1100"
-            >
-                <div
-                    class="toast align-items-center text-bg-success border-0 show"
-                    role="alert"
-                    aria-live="assertive"
-                    aria-atomic="true"
-                >
-                    <div class="d-flex">
-                        <div class="toast-body">
-                            {{ session("success") }}
-                        </div>
-                        <button
-                            type="button"
-                            class="btn-close btn-close-white me-2 m-auto"
-                            data-bs-dismiss="toast"
-                            aria-label="Fechar"
-                        ></button>
-                    </div>
-                </div>
-            </div>
-        @endif
     </section>
 @endsection

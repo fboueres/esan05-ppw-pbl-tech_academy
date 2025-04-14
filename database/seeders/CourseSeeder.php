@@ -21,10 +21,17 @@ class CourseSeeder extends Seeder
         ];
 
         foreach ($courses as $course) {
-            Course::create([
+            $course = Course::create([
                 'name' => $course,
                 'description' => "Seja certificado {$course}!",
             ]);
+
+            for ($i = 1; $i <= 5; $i++) {
+                $course->modules()->create([
+                    'name' => "{$i}º Módulo",
+                    'order' => $i,
+                ]);
+            }
         }
     }
 }

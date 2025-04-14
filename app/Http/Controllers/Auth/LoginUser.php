@@ -19,7 +19,7 @@ class LoginUser extends Controller
         if (Auth::attempt($user_credentials, $remember_me)) {
             $request->session()->regenerate();
 
-            return redirect()->intended("/home");
+            return redirect()->intended("/courses");
         }
 
         return back()

@@ -4,8 +4,8 @@
     <section>
         <div class="d-flex justify-content-between align-items-center mb-3">
             <h3 class="text-center mb-0">Cursos Disponíveis</h3>
-            <a href="{{ route("courses.create") }}" class="btn btn-primary">
-                Criar Novo Curso
+            <a href="{{ route("courses.create") }}" class="btn btn-success">
+                + Novo Curso
             </a>
         </div>
         <div class="row row-cols-3 g-3">
@@ -34,9 +34,17 @@
                                         <li>
                                             <a
                                                 class="dropdown-item"
+                                                href="{{ route("courses.modules.index", $course->id) }}"
+                                            >
+                                                Módulos
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a
+                                                class="dropdown-item"
                                                 href="{{ route("courses.edit", $course->id) }}"
                                             >
-                                                Editar
+                                                Editar Curso
                                             </a>
                                         </li>
                                         <li>
