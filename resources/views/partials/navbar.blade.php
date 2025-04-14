@@ -6,7 +6,9 @@
                 <a href="#home" class="nav-link">Home</a>
             </li>
             <li class="nav-item">
-                <a href="{{ route('lessons.index') }}" class="nav-link">Cursos</a>
+                <a href="{{ route("lessons.index") }}" class="nav-link">
+                    Cursos
+                </a>
             </li>
         </ul>
         <div class="dropdown ms-auto">

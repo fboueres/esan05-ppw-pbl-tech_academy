@@ -35,6 +35,7 @@ class CourseSeeder extends Seeder
                 for ($j = 1; $j <= 3; $j++) {
                     $module->lessons()->create([
                         'name' => "{$j}ª Aula do {$i}º Módulo",
+                        'link' => "https://www.youtube.com/embed/pmyyV-By_Jo?list=PLIHE326iMCHDcC35goN6r1tL3WiOyDIJc",
                         'order' => $j,
                     ]);
                 }

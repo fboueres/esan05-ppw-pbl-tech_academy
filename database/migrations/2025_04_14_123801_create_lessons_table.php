@@ -14,6 +14,7 @@ return new class extends Migration
         Schema::create('lessons', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('name');
+            $table->text('link')->nullable();
             $table->unsignedInteger('order');
             $table->uuid('module_id');
             $table->timestamps();

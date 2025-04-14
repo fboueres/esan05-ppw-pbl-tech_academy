@@ -3,7 +3,9 @@
         <a class="navbar-brand" href="#">Tech Academy</a>
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-                <a class="nav-link" href="{{ route('courses.index') }}">Cursos</a>
+                <a class="nav-link" href="{{ route("courses.index") }}">
+                    Cursos
+                </a>
             </li>
         </ul>
 

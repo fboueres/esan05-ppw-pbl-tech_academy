@@ -28,6 +28,19 @@
                         <label for="name">Nome da Aula</label>
                     </div>
 
+                    <div class="form-floating mb-3">
+                        <input
+                            type="text"
+                            name="link"
+                            id="link"
+                            class="form-control @error("link") is-invalid @enderror"
+                            placeholder="Link da Aula"
+                            value="{{ old("link", $lesson->link) }}"
+                            required
+                        />
+                        <label for="link">Link da Aula</label>
+                    </div>
+
                     <div class="form-floating mb-4">
                         <input
                             type="number"

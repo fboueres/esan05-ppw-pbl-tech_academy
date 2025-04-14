@@ -17,6 +17,7 @@ class Lesson extends Model
      */
     protected $fillable = [
         'name',
+        'link',
         'order',
     ];
 

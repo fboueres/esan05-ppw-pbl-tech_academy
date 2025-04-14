@@ -5,12 +5,21 @@
         <div class="card w-50">
             <div class="card-body">
                 <h3 class="card-title text-center mb-3">Editar Curso</h3>
-                @if (session('success'))
-                    <div class="alert alert-success alert-dismissible fade show" role="alert">
-                        {{ session('success') }}
-                        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Fechar"></button>
+                @if (session("success"))
+                    <div
+                        class="alert alert-success alert-dismissible fade show"
+                        role="alert"
+                    >
+                        {{ session("success") }}
+                        <button
+                            type="button"
+                            class="btn-close"
+                            data-bs-dismiss="alert"
+                            aria-label="Fechar"
+                        ></button>
                     </div>
                 @endif
+
                 <form
                     action="{{ route("courses.update", $course) }}"
                     method="POST"
