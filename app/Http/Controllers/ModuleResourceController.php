@@ -34,7 +34,8 @@ class ModuleResourceController extends Controller
     {
         $course->modules()->create($request->validated());
 
-        return redirect()->route('courses.modules.index', $course)->with('success', 'Módulo criado com sucesso!');
+        return redirect()->route('courses.modules.index', $course)
+            ->with('success', 'Módulo criado com sucesso!');
     }
 
     /**
@@ -60,7 +61,9 @@ class ModuleResourceController extends Controller
     {
         $module->update($request->validated());
 
-        return redirect()->route('courses.modules.index', $course)->with('success', 'Módulo atualizado com sucesso!');
+        return redirect()
+            ->route('courses.modules.index', $course)
+            ->with('success', 'Módulo atualizado com sucesso!');
     }
 
     /**

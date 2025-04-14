@@ -3,7 +3,7 @@
 namespace App\Http\Requests\Modules;
 
 use Illuminate\Foundation\Http\FormRequest;
-use Illuminate\Validation\Rule;
+// use Illuminate\Validation\Rule;
 
 class StoreModuleRequest extends FormRequest
 {
@@ -22,16 +22,16 @@ class StoreModuleRequest extends FormRequest
      */
     public function rules(): array
     {
-        $course_id = $this->route('course')->id;
+        // $course_id = $this->route('course')->id;
 
         return [
             'name' => 'required|string|max:255',
             'order' => [
                 'required',
                 'integer',
-                Rule::unique('modules')->where(function ($query) use ($course_id) {
-                    return $query->where('course_id', $course_id);
-                }),
+                // Rule::unique('modules')->where(function ($query) use ($course_id) {
+                //     return $query->where('course_id', $course_id);
+                // }),
             ],
         ];
     }

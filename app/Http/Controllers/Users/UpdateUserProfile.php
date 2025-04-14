@@ -28,6 +28,8 @@ class UpdateUserProfile extends Controller
         
         $user->update($request->only(['name', 'email']));
         
-        return redirect()->back()->with('success', 'User data updated successfully');
+        return redirect()
+            ->back()
+            ->with('success', 'User data updated successfully');
     }
 }

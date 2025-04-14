@@ -31,7 +31,7 @@ class CourseResourceController extends Controller
      */
     public function store(StoreCourseRequest $request)
     {
-        $course = Course::create($request->validated());
+        Course::create($request->validated());
 
         return redirect()->route('courses.index');
     }
@@ -59,7 +59,8 @@ class CourseResourceController extends Controller
     {
         $course->update($request->validated());
 
-        return redirect()->route('courses.edit', $course)->with('success', 'Curso atualizado com sucesso!');
+        return redirect()->route('courses.edit', $course)
+            ->with('success', 'Curso atualizado com sucesso!');
     }
 
     /**
