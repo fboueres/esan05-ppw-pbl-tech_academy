@@ -14,7 +14,7 @@ class ModuleResourceController extends Controller
      */
     public function index(Course $course)
     {
-        $modules = $course->modules()->get();
+        $modules = $course->modules()->with('lessons')->get();
 
         return view('modules.index', compact('course', 'modules'));
     }

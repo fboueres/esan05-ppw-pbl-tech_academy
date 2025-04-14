@@ -1,15 +1,15 @@
 @extends("layouts.app")
 
-@section("title", "Criar Novo Módulo")
+@section("title", "Editar Aula")
 
 @section("content")
     <section class="d-flex justify-content-center">
         <div class="card w-50 shadow-sm">
             <div class="card-body">
-                <h3 class="card-title text-center mb-4">Criar Novo Módulo</h3>
+                <h3 class="card-title text-center mb-4">Editar Aula</h3>
 
                 <form
-                    action="{{ route("courses.modules.update", [$course, $module]) }}"
+                    action="{{ route("courses.modules.lessons.update", [$course, $module, $lesson]) }}"
                     method="POST"
                 >
                     @csrf
@@ -21,11 +21,11 @@
                             name="name"
                             id="name"
                             class="form-control @error("name") is-invalid @enderror"
-                            placeholder="Nome do Módulo"
-                            value="{{ old("name", $module->name) }}"
+                            placeholder="Nome da Aula"
+                            value="{{ old("name", $lesson->name) }}"
                             required
                         />
-                        <label for="name">Nome do Módulo</label>
+                        <label for="name">Nome da Aula</label>
                     </div>
 
                     <div class="form-floating mb-4">
@@ -34,12 +34,12 @@
                             name="order"
                             id="order"
                             class="form-control @error("order") is-invalid @enderror"
-                            placeholder="Ordem no Curso"
-                            value="{{ old("order", $module->order) }}"
+                            placeholder="Ordem no Módulo"
+                            value="{{ old("order", $lesson->order) }}"
                             min="1"
                             required
                         />
-                        <label for="order">Ordem no Curso</label>
+                        <label for="order">Ordem no Módulo</label>
                     </div>
 
                     <div class="d-flex gap-3">

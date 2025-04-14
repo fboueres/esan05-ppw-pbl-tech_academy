@@ -14,9 +14,12 @@ return new class extends Migration
         Schema::create('lessons', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('name');
-            $table->text('description');
-            $table->integer('duration');
+            $table->unsignedInteger('order');
+            $table->uuid('module_id');
             $table->timestamps();
+
+            $table->unique(['order', 'module_id']);
+            $table->foreign('module_id')->references('id')->on('modules')->cascadeOnDelete();
         });
     }
 

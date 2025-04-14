@@ -20,17 +20,24 @@ class CourseSeeder extends Seeder
             'Security+',
         ];
 
-        foreach ($courses as $course) {
+        foreach ($courses as $courseName) {
             $course = Course::create([
-                'name' => $course,
-                'description' => "Seja certificado {$course}!",
+                'name' => $courseName,
+                'description' => "Seja certificado {$courseName}!",
             ]);
 
             for ($i = 1; $i <= 5; $i++) {
-                $course->modules()->create([
+                $module = $course->modules()->create([
                     'name' => "{$i}º Módulo",
                     'order' => $i,
                 ]);
+
+                for ($j = 1; $j <= 3; $j++) {
+                    $module->lessons()->create([
+                        'name' => "{$j}ª Aula do {$i}º Módulo",
+                        'order' => $j,
+                    ]);
+                }
             }
         }
     }

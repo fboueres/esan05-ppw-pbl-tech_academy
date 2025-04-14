@@ -1,25 +1,28 @@
-@extends('layouts.app')
+@extends("layouts.app")
 
-@section('title', 'Criar Novo Módulo')
+@section("title", "Criar Novo Módulo")
 
-@section('content')
+@section("content")
     <section class="d-flex justify-content-center">
         <div class="card w-50 shadow-sm">
             <div class="card-body">
                 <h3 class="card-title text-center mb-4">Criar Novo Módulo</h3>
 
-                <form action="{{ route('courses.modules.store', $course) }}" method="POST">
+                <form
+                    action="{{ route("courses.modules.store", $course) }}"
+                    method="POST"
+                >
                     @csrf
-                    @method('POST')
+                    @method("POST")
 
                     <div class="form-floating mb-3">
                         <input
                             type="text"
                             name="name"
                             id="name"
-                            class="form-control @error('name') is-invalid @enderror"
+                            class="form-control @error("name") is-invalid @enderror"
                             placeholder="Nome do Módulo"
-                            value="{{ old('name') }}"
+                            value="{{ old("name") }}"
                             required
                         />
                         <label for="name">Nome do Módulo</label>
@@ -30,9 +33,9 @@
                             type="number"
                             name="order"
                             id="order"
-                            class="form-control @error('order') is-invalid @enderror"
+                            class="form-control @error("order") is-invalid @enderror"
                             placeholder="Ordem no Curso"
-                            value="{{ old('order') }}"
+                            value="{{ old("order") }}"
                             min="1"
                             required
                         />
@@ -40,7 +43,10 @@
                     </div>
 
                     <div class="d-flex gap-3">
-                        <a href="{{ url()->previous() }}" class="btn btn-secondary w-100">
+                        <a
+                            href="{{ url()->previous() }}"
+                            class="btn btn-secondary w-100"
+                        >
                             Voltar
                         </a>
                         <button type="submit" class="btn btn-primary w-100">

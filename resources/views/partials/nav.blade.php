@@ -5,12 +5,6 @@
             <li class="nav-item">
                 <a class="nav-link" href="{{ route('courses.index') }}">Cursos</a>
             </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#Feedback">Feedback</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#FAQ">FAQ</a>
-            </li>
         </ul>
 
         <div class="dropdown">
