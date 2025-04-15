@@ -8,6 +8,20 @@
                 + Novo Curso
             </a>
         </div>
+        @if (session("success"))
+            <div
+                class="alert alert-success alert-dismissible fade show"
+                role="alert"
+            >
+                {{ session("success") }}
+                <button
+                    type="button"
+                    class="btn-close"
+                    data-bs-dismiss="alert"
+                    aria-label="Fechar"
+                ></button>
+            </div>
+        @endif
         <div class="row row-cols-3 g-3">
             @forelse ($courses as $course)
                 <div class="col">
@@ -19,56 +33,43 @@
                                 <h5 class="card-title mb-0">
                                     {{ $course->name }}
                                 </h5>
-                                <div class="dropdown">
-                                    <button
-                                        class="btn btn-sm btn-close p-2"
-                                        type="button"
-                                        id="dropdownMenuButton-{{ $course->id }}"
-                                        data-bs-toggle="dropdown"
-                                        aria-expanded="false"
-                                    ></button>
-                                    <ul
-                                        class="dropdown-menu dropdown-menu-end mt-2"
-                                        aria-labelledby="dropdownMenuButton-{{ $course->id }}"
+
+                                <div class="d-flex gap-2">
+                                    <a
+                                        href="{{ route("courses.edit", $course->id) }}"
+                                        class="btn btn-sm btn-outline-primary"
+                                        title="Editar Curso"
                                     >
-                                        <li>
-                                            <a
-                                                class="dropdown-item"
-                                                href="{{ route("courses.modules.index", $course->id) }}"
-                                            >
-                                                Módulos
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <a
-                                                class="dropdown-item"
-                                                href="{{ route("courses.edit", $course->id) }}"
-                                            >
-                                                Editar Curso
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <form
-                                                action="{{ route("courses.destroy", $course->id) }}"
-                                                method="POST"
-                                                onsubmit="return confirm('Tem certeza que deseja excluir este curso?')"
-                                            >
-                                                @csrf
-                                                @method("DELETE")
-                                                <button
-                                                    type="submit"
-                                                    class="dropdown-item text-danger"
-                                                >
-                                                    Excluir
-                                                </button>
-                                            </form>
-                                        </li>
-                                    </ul>
+                                        Editar
+                                    </a>
+                                    <form
+                                        action="{{ route("courses.destroy", $course->id) }}"
+                                        method="POST"
+                                        onsubmit="return confirm('Tem certeza que deseja excluir este curso?')"
+                                    >
+                                        @csrf
+                                        @method("DELETE")
+                                        <button
+                                            type="submit"
+                                            class="btn btn-sm btn-outline-danger"
+                                            title="Excluir Curso"
+                                        >
+                                            Excluir
+                                        </button>
+                                    </form>
                                 </div>
                             </div>
+
                             <p class="card-text text-muted flex-grow-1">
                                 {{ \Illuminate\Support\Str::limit($course->description, 100) }}
                             </p>
+
+                            <a
+                                href="{{ route("courses.modules.index", $course->id) }}"
+                                class="btn btn-primary mt-auto"
+                            >
+                                Ver Módulos
+                            </a>
                         </div>
                     </div>
                 </div>

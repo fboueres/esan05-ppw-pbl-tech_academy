@@ -84,7 +84,7 @@
                 <div class="row align-items-center">
                     <div class="col-6 mb-3">
                         <img
-                            src="/caio_coimbra_eh_gay.png"
+                            src="/picture.png"
                             alt="Ilustração de programação"
                             class="img-fluid rounded shadow-sm w-75 p-3"
                         />

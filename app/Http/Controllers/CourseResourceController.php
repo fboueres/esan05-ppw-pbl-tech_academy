@@ -33,7 +33,9 @@ class CourseResourceController extends Controller
     {
         Course::create($request->validated());
 
-        return redirect()->route('courses.index');
+        return redirect()
+            ->route('courses.index')
+            ->with('success', 'Curso criado com sucesso!');
     }
 
     /**
@@ -70,6 +72,8 @@ class CourseResourceController extends Controller
     {
         $course->delete();
         
-        return redirect()->route('courses.index');
+        return redirect()
+            ->route('courses.index')
+            ->with('success', 'Curso excluído com sucesso!');
     }
 }
