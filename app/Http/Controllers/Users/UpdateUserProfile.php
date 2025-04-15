@@ -30,6 +30,6 @@ class UpdateUserProfile extends Controller
         
         return redirect()
             ->back()
-            ->with('success', 'User data updated successfully');
+            ->with('success', 'Seu perfil foi atualizado com sucesso!');
     }
 }

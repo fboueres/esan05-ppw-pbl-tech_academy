@@ -6,7 +6,7 @@
 
         <title>@yield("title", "Tech Academy")</title>
 
-        @vite(["resources/css/app.css", "resources/js/app.js"])
+        @vite(["resources/scss/app.scss", "resources/js/app.js"])
     </head>
     <body class="d-flex flex-column min-vh-100">
         @include("partials.navbar")
