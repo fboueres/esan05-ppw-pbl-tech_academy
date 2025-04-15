@@ -9,7 +9,7 @@
         @vite(["resources/css/app.css", "resources/js/app.js"])
     </head>
     <body class="d-flex flex-column min-vh-100">
-        @include("partials.nav")
+        @include("partials.navbar")
         <main class="flex-grow-1 d-flex flex-column container my-3">
             @yield("content")
         </main>

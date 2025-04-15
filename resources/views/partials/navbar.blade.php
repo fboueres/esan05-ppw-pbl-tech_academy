@@ -1,25 +1,24 @@
-<nav class="navbar bg-body-tertiary">
-    <div class="container-fluid">
-        <span class="navbar-brand">Tech Academy</span>
-        <ul class="navbar-nav me-auto d-flex flex-row gap-3">
+<nav class="navbar navbar-expand bg-body-tertiary">
+    <div class="container">
+        <a class="navbar-brand" href="#">Tech Academy</a>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item">
-                <a href="#home" class="nav-link">Home</a>
-            </li>
-            <li class="nav-item">
-                <a href="{{ route("lessons.index") }}" class="nav-link">
+                <a class="nav-link" href="{{ route("courses.index") }}">
                     Cursos
                 </a>
             </li>
         </ul>
-        <div class="dropdown ms-auto">
-            <button
-                class="btn btn-secondary dropdown-toggle"
-                type="button"
+
+        <div class="dropdown">
+            <a
+                href="#"
+                class="btn btn-outline-secondary dropdown-toggle"
+                role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
             >
                 {{ Auth::user()->name }}
-            </button>
+            </a>
             <ul class="dropdown-menu dropdown-menu-end">
                 <li>
                     <a
