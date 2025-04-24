@@ -24,4 +24,5 @@
         }}
     />
     <label for="{{ $name }}">{{ $label }}</label>
+    {{ $slot }}
 </div>

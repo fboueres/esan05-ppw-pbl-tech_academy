@@ -21,4 +21,5 @@
 {{ old($name, $value ?? "") }}</textarea
     >
     <label for="{{ $name }}">{{ $label }}</label>
+    {{ $slot }}
 </div>
