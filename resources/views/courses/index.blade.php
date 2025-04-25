@@ -22,6 +22,7 @@
                 ></button>
             </div>
         @endif
+
         <div class="row row-cols-3 g-3">
             @forelse ($courses as $course)
                 <div class="col">

@@ -89,7 +89,7 @@
                             class="img-fluid rounded shadow-sm w-75 p-3"
                         />
                     </div>
-            
+
                     <div class="col-6">
                         <h2>Aprenda Programação!</h2>
                         <h4 class="text-body-secondary mb-3">
@@ -97,33 +97,37 @@
                         </h4>
                         <div class="text-wrap">
                             <p>
-                                As linguagens de programação são a base do desenvolvimento
-                                de softwares, aplicativos e sistemas inovadores.
+                                As linguagens de programação são a base do
+                                desenvolvimento de softwares, aplicativos e
+                                sistemas inovadores.
                             </p>
                             <p>
-                                Em um site de cursos de tecnologia, você pode aprender desde
-                                as mais populares, como Python, JavaScript e Java, até as
-                                mais especializadas, como Rust e Go.
+                                Em um site de cursos de tecnologia, você pode
+                                aprender desde as mais populares, como Python,
+                                JavaScript e Java, até as mais especializadas,
+                                como Rust e Go.
                             </p>
                             <p>
-                                Cada linguagem tem suas particularidades e aplicações,
-                                permitindo que você escolha a que melhor se adapta aos seus
-                                objetivos profissionais. Com materiais didáticos
-                                interativos, exercícios práticos e projetos reais, os cursos
-                                online proporcionam um aprendizado dinâmico e eficiente.
+                                Cada linguagem tem suas particularidades e
+                                aplicações, permitindo que você escolha a que
+                                melhor se adapta aos seus objetivos
+                                profissionais. Com materiais didáticos
+                                interativos, exercícios práticos e projetos
+                                reais, os cursos online proporcionam um
+                                aprendizado dinâmico e eficiente.
                             </p>
                             <p>
-                                Seja para iniciar na programação ou aprimorar suas
-                                habilidades, dominar novas linguagens abre portas para
-                                oportunidades em diversas áreas da tecnologia, como
-                                desenvolvimento web, mobile, inteligência artificial e
-                                segurança digital.
+                                Seja para iniciar na programação ou aprimorar
+                                suas habilidades, dominar novas linguagens abre
+                                portas para oportunidades em diversas áreas da
+                                tecnologia, como desenvolvimento web, mobile,
+                                inteligência artificial e segurança digital.
                             </p>
                         </div>
                     </div>
                 </div>
             </section>
-            
+
             <section
                 id="Cursos"
                 class="container mb-3 d-flex flex-column"
