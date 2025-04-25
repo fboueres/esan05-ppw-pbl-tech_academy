@@ -9,36 +9,25 @@
         <form action="{{ route("login") }}" method="POST">
             @csrf
             @method("POST")
-            <div class="form-floating mb-3">
-                <input
-                    type="email"
-                    name="email"
-                    id="email"
-                    class="form-control @error("email") is-invalid @enderror"
-                    placeholder="E-mail"
-                    value="{{ old("email") }}"
-                    required
-                />
-                <label for="name">E-mail</label>
+            <x-form.input-text
+                type="email"
+                name="email"
+                label="E-mail"
+                required
+            >
                 @if ($errors->any())
                     <div class="form-text text-danger ms-2">
                         Algo deu errado, verifique suas credenciais e tente
                         novamente.
                     </div>
                 @endif()
-            </div>
-
-            <div class="form-floating mb-3">
-                <input
-                    type="password"
-                    name="password"
-                    id="password"
-                    class="form-control"
-                    placeholder="Senha"
-                    required
-                />
-                <label for="password">Senha</label>
-            </div>
+            </x-form.input-text>
+            <x-form.input-text
+                type="password"
+                name="password"
+                label="Senha"
+                required
+            />
 
             <div class="row mb-3 w-100">
                 <div class="col-6 d-flex justify-content-center">

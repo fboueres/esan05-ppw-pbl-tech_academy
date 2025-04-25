@@ -15,45 +15,24 @@
                     @csrf
                     @method("PUT")
 
-                    <div class="form-floating mb-3">
-                        <input
-                            type="text"
-                            name="name"
-                            id="name"
-                            class="form-control @error("name") is-invalid @enderror"
-                            placeholder="Nome da Aula"
-                            value="{{ old("name", $lesson->name) }}"
-                            required
-                        />
-                        <label for="name">Nome da Aula</label>
-                    </div>
+                    <x-form.input-text
+                        name="name"
+                        label="Nome da Aula"
+                        :value="$lesson->name"
+                    />
 
-                    <div class="form-floating mb-3">
-                        <input
-                            type="text"
-                            name="link"
-                            id="link"
-                            class="form-control @error("link") is-invalid @enderror"
-                            placeholder="Link da Aula"
-                            value="{{ old("link", $lesson->link) }}"
-                            required
-                        />
-                        <label for="link">Link da Aula</label>
-                    </div>
+                    <x-form.input-text
+                        name="link"
+                        label="Link da Aula"
+                        :value="$lesson->link"
+                    />
 
-                    <div class="form-floating mb-4">
-                        <input
-                            type="number"
-                            name="order"
-                            id="order"
-                            class="form-control @error("order") is-invalid @enderror"
-                            placeholder="Ordem no Módulo"
-                            value="{{ old("order", $lesson->order) }}"
-                            min="1"
-                            required
-                        />
-                        <label for="order">Ordem no Módulo</label>
-                    </div>
+                    <x-form.input-text
+                        type="number"
+                        name="order"
+                        label="Ordem no Módulo"
+                        :value="$lesson->order"
+                    />
 
                     <div class="d-flex gap-3">
                         <a

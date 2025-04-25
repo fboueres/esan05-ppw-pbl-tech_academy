@@ -9,60 +9,41 @@
         <form action="{{ route("register") }}" method="POST">
             @csrf
             @method("POST")
-            <div class="form-floating mb-3">
-                <input
-                    type="text"
-                    name="name"
-                    id="name"
-                    class="form-control @error("name") is-invalid @enderror"
-                    placeholder="Nome"
-                    value="{{ old("name") }}"
-                    required
-                />
-                <label for="name">Nome</label>
+            <x-form.input-text name="name" label="Nome" required>
                 @error("name")
                     <div class="form-text text-danger ms-2">
                         Algo deu errado, verifique suas credencias e tente
                         novamente
                     </div>
                 @enderror
-            </div>
+            </x-form.input-text>
 
-            <div class="form-floating mb-3">
-                <input
-                    type="email"
-                    name="email"
-                    id="email"
-                    class="form-control @error("email") is-invalid @enderror"
-                    placeholder="E-mail"
-                    value="{{ old("email") }}"
-                    required
-                />
-                <label for="email">E-mail</label>
+            <x-form.input-text
+                type="email"
+                name="email"
+                label="E-mail"
+                required
+            >
                 @error("email")
                     <div class="form-text text-danger ms-2">
                         Algo deu errado, verifique suas credencias e tente
                         novamente
                     </div>
                 @enderror
-            </div>
+            </x-form.input-text>
 
-            <div class="form-floating mb-3">
-                <input
-                    type="password"
-                    name="password"
-                    id="password"
-                    class="form-control @error("password") is-invalid @enderror"
-                    placeholder="Senha"
-                    required
-                />
-                <label for="password">Senha</label>
+            <x-form.input-text
+                type="password"
+                name="password"
+                label="Senha"
+                required
+            >
                 @error("password")
                     <div class="form-text text-danger ms-2">
                         Sua senha deve ter, no mínimo, 8 caracteres
                     </div>
                 @enderror
-            </div>
+            </x-form.input-text>
 
             <div class="w-100 d-flex justify-content-center mb-3">
                 <button type="submit" class="btn btn-primary btn-block w-75">

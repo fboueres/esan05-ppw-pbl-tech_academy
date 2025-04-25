@@ -15,32 +15,17 @@
                     @csrf
                     @method("PUT")
 
-                    <div class="form-floating mb-3">
-                        <input
-                            type="text"
-                            name="name"
-                            id="name"
-                            class="form-control @error("name") is-invalid @enderror"
-                            placeholder="Nome do Módulo"
-                            value="{{ old("name", $module->name) }}"
-                            required
-                        />
-                        <label for="name">Nome do Módulo</label>
-                    </div>
+                    <x-form.input-text
+                        name="name"
+                        label="Nome do Módulo"
+                        :value="$module->name"
+                    />
 
-                    <div class="form-floating mb-4">
-                        <input
-                            type="number"
-                            name="order"
-                            id="order"
-                            class="form-control @error("order") is-invalid @enderror"
-                            placeholder="Ordem no Curso"
-                            value="{{ old("order", $module->order) }}"
-                            min="1"
-                            required
-                        />
-                        <label for="order">Ordem no Curso</label>
-                    </div>
+                    <x-form.input-text
+                        name="order"
+                        label="Ordem no Curso"
+                        :value="$module->order"
+                    />
 
                     <div class="d-flex gap-3">
                         <a

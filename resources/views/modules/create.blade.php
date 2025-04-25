@@ -15,32 +15,13 @@
                     @csrf
                     @method("POST")
 
-                    <div class="form-floating mb-3">
-                        <input
-                            type="text"
-                            name="name"
-                            id="name"
-                            class="form-control @error("name") is-invalid @enderror"
-                            placeholder="Nome do Módulo"
-                            value="{{ old("name") }}"
-                            required
-                        />
-                        <label for="name">Nome do Módulo</label>
-                    </div>
+                    <x-form.input-text name="name" label="Nome do Módulo" />
 
-                    <div class="form-floating mb-4">
-                        <input
-                            type="number"
-                            name="order"
-                            id="order"
-                            class="form-control @error("order") is-invalid @enderror"
-                            placeholder="Ordem no Curso"
-                            value="{{ old("order") }}"
-                            min="1"
-                            required
-                        />
-                        <label for="order">Ordem no Curso</label>
-                    </div>
+                    <x-form.input-text
+                        type="number"
+                        name="order"
+                        label="Ordem no Curso"
+                    />
 
                     <div class="d-flex gap-3">
                         <a

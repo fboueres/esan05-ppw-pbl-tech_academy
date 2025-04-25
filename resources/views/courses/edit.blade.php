@@ -26,30 +26,19 @@
                 >
                     @csrf
                     @method("PUT")
-                    <div class="form-floating mb-3">
-                        <input
-                            type="text"
-                            name="name"
-                            id="name"
-                            class="form-control @error("name") is-invalid @enderror"
-                            placeholder="Nome do Curso"
-                            value="{{ old("name", $course->name) }}"
-                            required
-                        />
-                        <label for="name">Nome do Curso</label>
-                    </div>
-                    <div class="form-floating mb-3">
-                        <textarea
-                            name="description"
-                            id="description"
-                            class="form-control @error("description") is-invalid @enderror"
-                            placeholder="Descrição do Curso"
-                            required
-                        >
-{{ old("description", $course->description) }}</textarea
-                        >
-                        <label for="description">Descrição do Curso</label>
-                    </div>
+                    <x-form.input-text
+                        name="name"
+                        label="Nome do Curso"
+                        :value="$course->name"
+                        required
+                    />
+
+                    <x-form.input-text
+                        name="description"
+                        label="Descrição do Curso"
+                        :value="$course->description"
+                        required
+                    />
 
                     <div class="d-flex gap-3">
                         <a
